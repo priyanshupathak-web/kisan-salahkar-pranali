@@ -4,245 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Agricultural Advisory System</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="app">
+    <div class="container-fluid">
         <!-- Header -->
         <header class="header">
             <div class="container">
                 <div class="header__content">
                     <h1 class="header__title" id="mainTitle">Smart Agricultural Advisory System</h1>
-                    <nav class="header__nav"></nav>
-                        <ul ></ul>
-                           <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#home"> Home</a></li>
-                           <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#problems"> Problems</a></li>
-                           <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#weather"> Weather</a></li>
-                           <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#crops"> Crop Calendar</a></li>
-                           
+                    <nav class="header__nav">
+                        <ul>
+                            <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#home">Home</a></li>
+                            <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#problems">Problems</a></li>
+                            <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#weather">Weather</a></li>
+                            <li><a href="https://priyanshupathak-web.github.io/updated-hackathon-2/#crops">Crop Calendar</a></li>
                         </ul>
                     </nav>
                     <div class="language-selector">
                         <button class="language-btn active" data-lang="english" type="button">English</button>
-                        <button class="language-btn" data-lang="hindi" type="button">हिंदी</button>
-                        <button class="language-btn" data-lang="telugu" type="button">తెలుగు</button>
+                        <button class="language-btn" data-lang="hindi" type="button">हিন্দি</button>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
-        <main class="main">
-            <div class="container">
-                <!-- Form Section -->
-                <div class="form-section" id="formSection">
-                    <div class="card">
-                        <div class="card__body">
-                            <h2 id="formTitle">Agricultural Information</h2>
-                            <form class="agricultural-form" id="agriculturalForm">
-                                <div class="form-grid">
-                                    <!-- Soil Type Selection -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="soilType" id="soilTypeLabel">Soil Type</label>
-                                        <select class="form-control" id="soilType" name="soilType" required>
-                                            <option value="">Select soil type</option>
-                                            <option value="red-sandy">Red Sandy</option>
-                                            <option value="red-clay">Red Clay</option>
-                                            <option value="red-loamy">Red Loamy</option>
-                                            <option value="black-sandy">Black Sandy</option>
-                                            <option value="black-clay">Black Clay</option>
-                                            <option value="black-loamy">Black Loamy</option>
-                                            <option value="alluvial-sandy">Alluvial Sandy</option>
-                                            <option value="alluvial-clay">Alluvial Clay</option>
-                                            <option value="alluvial-loamy">Alluvial Loamy</option>
-                                        </select>
+        <div class="container">
+            <!-- Form Section -->
+            <div id="formSection">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card shadow">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="mb-0" id="formTitle">Agricultural Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <form id="agriculturalForm" novalidate>
+                                    <div class="row">
+                                        <!-- Soil Type -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="soilType" class="form-label">
+                                                <i class="fas fa-seedling"></i> Soil Type *
+                                            </label>
+                                            <select class="form-select" id="soilType" required>
+                                                <option value="">Select Soil Type</option>
+                                                <option value="alluvial-sandy">Alluvial Sandy</option>
+                                                <option value="alluvial-clay">Alluvial Clay</option>
+                                                <option value="alluvial-loamy">Alluvial Loamy</option>
+                                                <option value="red-sandy">Red Sandy</option>
+                                                <option value="red-clay">Red Clay</option>
+                                                <option value="red-loamy">Red Loamy</option>
+                                                <option value="black-sandy">Black Sandy</option>
+                                                <option value="black-clay">Black Clay</option>
+                                                <option value="black-loamy">Black Loamy</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Region -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="region" class="form-label">
+                                                <i class="fas fa-map-marker-alt"></i> Region *
+                                            </label>
+                                            <select class="form-select" id="region" required>
+                                                <option value="">Select Region</option>
+                                                <option value="north-india">North India</option>
+                                                <option value="south-india">South India</option>
+                                                <option value="east-india">East India</option>
+                                                <option value="west-india">West India</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Previous Crop -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="previousCrop" class="form-label">
+                                                <i class="fas fa-history"></i> Previous Crop *
+                                            </label>
+                                            <select class="form-select" id="previousCrop" required>
+                                                <option value="">Select Previous Crop</option>
+                                                <option value="rice">Rice</option>
+                                                <option value="wheat">Wheat</option>
+                                                <option value="maize">Maize</option>
+                                                <option value="cotton">Cotton</option>
+                                                <option value="groundnut">Groundnut</option>
+                                                <option value="mustard">Mustard</option>
+                                                <option value="sugarcane">Sugarcane</option>
+                                                <option value="none">None (First Crop)</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Farm Size -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="farmSize" class="form-label">
+                                                <i class="fas fa-expand-arrows-alt"></i> Farm Size (Hectares) *
+                                            </label>
+                                            <select class="form-select" id="farmSize" required>
+                                                <option value="">Select Farm Size</option>
+                                                <option value="marginal">Marginal (< 1 hectare)</option>
+                                                <option value="small">Small (1-2 hectares)</option>
+                                                <option value="semi-medium">Semi-medium (2-4 hectares)</option>
+                                                <option value="medium">Medium (4-10 hectares)</option>
+                                                <option value="large">Large (> 10 hectares)</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Water Availability -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="waterAvailability" class="form-label">
+                                                <i class="fas fa-tint"></i> Water Availability *
+                                            </label>
+                                            <select class="form-select" id="waterAvailability" required>
+                                                <option value="">Select Water Availability</option>
+                                                <option value="abundant">Abundant (Canal/Bore well)</option>
+                                                <option value="adequate">Adequate (Well irrigation)</option>
+                                                <option value="limited">Limited (Rainfall dependent)</option>
+                                                <option value="scarce">Scarce (Drought prone)</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Experience -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="experience" class="form-label">
+                                                <i class="fas fa-user-graduate"></i> Farming Experience *
+                                            </label>
+                                            <select class="form-select" id="experience" required>
+                                                <option value="">Select Experience</option>
+                                                <option value="beginner">Beginner (0-2 years)</option>
+                                                <option value="intermediate">Intermediate (3-10 years)</option>
+                                                <option value="experienced">Experienced (11-20 years)</option>
+                                                <option value="expert">Expert (20+ years)</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Current Date -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="currentDate" class="form-label">
+                                                <i class="fas fa-calendar"></i> Current Date *
+                                            </label>
+                                            <input type="date" class="form-control" id="currentDate" required>
+                                        </div>
+
+                                        <!-- Planning Date -->
+                                        <div class="col-md-6 mb-3">
+                                            <label for="planningDate" class="form-label">
+                                                <i class="fas fa-calendar-plus"></i> Planning Date *
+                                            </label>
+                                            <input type="date" class="form-control" id="planningDate" required>
+                                        </div>
                                     </div>
 
-                                    <!-- Region Selection -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="region" id="regionLabel">Region</label>
-                                        <select class="form-control" id="region" name="region" required>
-                                            <option value="">Select your region</option>
-                                            <option value="north-india">North India</option>
-                                            <option value="south-india">South India</option>
-                                            <option value="east-india">East India</option>
-                                            <option value="west-india">West India</option>
-                                            <option value="northeast-india">Northeast India</option>
-                                        </select>
+                                    <!-- Submit Button -->
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                            <span id="loadingSpinner" class="spinner-border spinner-border-sm me-2" style="display: none;"></span>
+                                            <span id="submitText">Get Recommendations</span>
+                                        </button>
+                                        <a href="www.youtube.com" class="button">go back to home page</a>
                                     </div>
-
-                                    <!-- Previous Crop -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="previousCrop" id="previousCropLabel">Previous Crop</label>
-                                        <input type="text" class="form-control" id="previousCrop" name="previousCrop" placeholder="Enter previous crop" required>
-                                    </div>
-
-                                    <!-- Current Date -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="currentDate" id="currentDateLabel">Current Date</label>
-                                        <input type="date" class="form-control" id="currentDate" name="currentDate" required>
-                                    </div>
-
-                                    <!-- Planning Date -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="planningDate" id="planningDateLabel">Planning Date</label>
-                                        <input type="date" class="form-control" id="planningDate" name="planningDate" required>
-                                    </div>
-
-                                    <!-- Farm Size -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="farmSize" id="farmSizeLabel">Farm Size (Hectares)</label>
-                                        <input type="number" class="form-control" id="farmSize" name="farmSize" placeholder="Enter farm size" step="0.1" min="0.1" required>
-                                    </div>
-
-                                    <!-- Water Availability -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="waterAvailability" id="waterAvailabilityLabel">Water Availability</label>
-                                        <select class="form-control" id="waterAvailability" name="waterAvailability" required>
-                                            <option value="">Select water availability</option>
-                                            <option value="high">High</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="low">Low</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Farming Experience -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="experience" id="experienceLabel">Farming Experience</label>
-                                        <select class="form-control" id="experience" name="experience" required>
-                                            <option value="">Select experience level</option>
-                                            <option value="beginner">Beginner</option>
-                                            <option value="intermediate">Intermediate</option>
-                                            <option value="expert">Expert</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="btn btn--primary btn--full-width" id="submitBtn">
-                                    <span id="submitText">Get Recommendations</span>
-                                    <span class="loading-spinner hidden" id="loadingSpinner">Processing...</span>
-                                </button>
-                                <br>
-                                <a href="www.youtube.com" class="button">go back to home page</a>
-
-                                    
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Results Section -->
-                <div class="results-section hidden" id="resultsSection">
-                    <!-- Seasonal Analysis -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="seasonalAnalysisTitle">Seasonal Analysis</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="seasonal-info" id="seasonalInfo">
-                                <div class="season-card" id="currentSeason">
-                                    <h3 id="currentSeasonTitle">Current Season</h3>
-                                    <p id="currentSeasonText">Season analysis will appear here</p>
-                                </div>
-                                <div class="season-card" id="planningSeason">
-                                    <h3 id="planningSeasonTitle">Planning Season</h3>
-                                    <p id="planningSeasonText">Planning season analysis will appear here</p>
-                                </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Crop Recommendations -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="cropRecommendationsTitle">Crop Recommendations</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="crop-recommendations" id="cropRecommendations">
-                                <!-- Dynamic crop recommendations will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pesticide Management -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="pesticideManagementTitle">Pesticide Management</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="pesticide-info" id="pesticideInfo">
-                                <!-- Dynamic pesticide information will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fertilizer Recommendations -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="fertilizerRecommendationsTitle">Fertilizer Recommendations</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="fertilizer-info" id="fertilizerInfo">
-                                <!-- Dynamic fertilizer information will be inserted here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Agricultural Calendar -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="agriculturalCalendarTitle">Agricultural Calendar</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="calendar-container">
-                                <div class="calendar-grid" id="calendarGrid">
-                                    <!-- Dynamic calendar will be inserted here -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resource Planning -->
-                    <div class="card">
-                        <div class="card__header">
-                            <h2 id="resourcePlanningTitle">Resource Planning</h2>
-                        </div>
-                        <div class="card__body">
-                            <div class="resource-planning" id="resourcePlanning">
-                                <div class="resource-item">
-                                    <h4 id="waterRequirementTitle">Water Requirement</h4>
-                                    <p id="waterRequirementText">Water requirement will be calculated here</p>
-                                </div>
-                                <div class="resource-item">
-                                    <h4 id="laborRequirementTitle">Labor Requirement</h4>
-                                    <p id="laborRequirementText">Labor requirement will be calculated here</p>
-                                </div>
-                                <div class="resource-item">
-                                    <h4 id="costEstimationTitle">Cost Estimation</h4>
-                                    <p id="costEstimationText">Cost estimation will be calculated here</p>
-                                </div>
-                                <div class="resource-item">
-                                    <h4 id="profitAnalysisTitle">Profit Analysis</h4>
-                                    <p id="profitAnalysisText">Profit analysis will be calculated here</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="action-buttons">
-                        <button type="button" class="btn btn--secondary" id="printBtn">Print Report</button>
-                        <button type="button" class="btn btn--primary" id="newRecommendationBtn">New Recommendation</button>
                     </div>
                 </div>
             </div>
-        </main>
+
+            <!-- Results Section -->
+            <div id="resultSection" style="display: none;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Agricultural Advisory Report</h2>
+                            <div>
+                                <button class="btn btn-success me-2" id="newRecommendationBtn">
+                                    <i class="fas fa-plus"></i> New Recommendation
+                                </button>
+                                <button class="btn btn-outline-primary" id="printBtn">
+                                    <i class="fas fa-print"></i> Print Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seasonal Analysis -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 id="currentSeasonTitle">Current Season</h5>
+                            </div>
+                            <div class="card-body">
+                                <p id="currentSeasonText">Season analysis will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 id="planningSeasonTitle">Planning Season</h5>
+                            </div>
+                            <div class="card-body">
+                                <p id="planningSeasonText">Planning season analysis will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop Recommendations -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 id="cropRecommendationsTitle">Crop Recommendations</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="cropRecommendations">
+                                    Recommendations will appear here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
-        <footer class="footer">
+       <footer class="footer">
             <div class="container">
                 <div class="footer__content">
                     <p>&copy; 2025 Smart Agricultural Advisory System. All rights reserved.</p>
+                    <p>Developer-Priyanshu Pathak</p>
                     <div class="footer__links">
                         <a href="mailto:itsmepriyanshupathak@gmail.com">Mail us</a>
                         
@@ -253,6 +247,9 @@
         </footer>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Application JS -->
     <script src="app.js"></script>
 </body>
 </html>
